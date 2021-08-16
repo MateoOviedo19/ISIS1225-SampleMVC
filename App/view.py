@@ -23,6 +23,7 @@
  * Dario Correal - Version inicial
  """
 
+from App.controller import loadBooksTags
 import config as cf
 import sys
 import controller
@@ -43,6 +44,7 @@ def printMenu():
     print("1- Cargar Libros")
     print("2- Cargar Tags")
     # TODO: Modificaciones para el laboratorio 1.
+    print("3- Cargar book tags")
     print("0- Salir")
 
 
@@ -77,6 +79,10 @@ while True:
         print('Total de tags cargados: ' + str(lt.size(tags)))
 
     # TODO: Modificaciones para el laboratorio 1.
+    elif int(inputs[0]) == 3: 
+        print("Cargando información de book tags....")
+        book_tags = loadBooksTags() 
+        print('Total de book tags cargados: ' + str(lt.size(book_tags)))
 
     else:
         sys.exit(0)
